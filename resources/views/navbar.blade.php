@@ -3,11 +3,13 @@
 <html lang="en" dir="ltr">
 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="{{url('/css/navbar.css')}}">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
   <!-- Boxicons CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,6 +117,23 @@ function closeAllSelect(elmnt) {
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 </script>
+<!-- Sidebar Dropdown Script-->
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
 
 </head>
 
@@ -188,20 +207,8 @@ document.addEventListener("click", closeAllSelect);
         </a>
         <span class="tooltip">User</span>
       </li>
-      <li>
-        <a href="#"  class="sidebar-link">
-          <i class='bx bx-chat'></i>
-          <span class="links_name">Messages</span>
-        </a>
-        <span class="tooltip">Messages</span>
-      </li>
-      <li>
-        <a href="#" class="sidebar-link dropdown">
-        <i class='bx bx-chat'></i>
-        <span class="drop">Dropdown</span>
-        </a>
-        <span class="tooltip">DropdoWN</span>
-      </li>
+      
+      
       <li>
         <a href="#"  class="sidebar-link">
           <i class='bx bx-pie-chart-alt-2'></i> <span class="links_name">Analytics</span>

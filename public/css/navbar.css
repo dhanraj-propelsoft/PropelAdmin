@@ -42,7 +42,12 @@
   z-index: 99;
   transition: all 0.5s ease;
   border: 3px solid blue;
+  overflow-x: hidden;
   
+}
+.active {
+  background-color: green;
+  color: white;
 }
 .vertical-contain-menu{
     height: 500px;
@@ -125,7 +130,14 @@
 .sidebar.open{
   width: 250px;
   overflow: scroll;
+  position: fixed;
+  /* z-index: 1; */
+  top: 0;
+  left: 0;
 }
+
+
+
 
 .sidebar .logo-details{
   height: 60px;
@@ -133,9 +145,7 @@
   align-items: center;
   position: relative;
 }
-.sidebar .logo_name .cars option{
-          font-weight: 700;
-}
+
 .sidebar .logo_name .cars{
   width: 310%;
   height: 40px;
@@ -271,6 +281,16 @@
   text-decoration: none;
   transition: all 0.4s ease;
   background: #11101D;
+  /* color: green; */
+  
+}
+
+.sidebar.open   .material-icons{
+  color: yellow;
+  font-size: 20px;
+}
+.sidebar.open li a .sidebar_link .drop{
+  color: red;
 }
 .sidebar li a:hover{
   background: #FFF;
@@ -295,18 +315,10 @@
   transition: 0.4s;
   /* float: right; */
 }
+
 .sidebar.open li a .links_name{
   opacity: 1;
   pointer-events: auto;
-}
- .sidebar li a .dropdown span{
-  color: red;
-  font-size: 15px;
-  font-weight: 400;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.4s;
 }
 .sidebar li a:hover .links_name,
 .sidebar li a:hover i{
@@ -318,6 +330,11 @@
   line-height: 50px;
   font-size: 18px;
   border-radius: 12px;
+}
+.sidebar li .drop-icon{
+  color: yellow;
+  
+
 }
 .sidebar li.profile{
   position: fixed;
